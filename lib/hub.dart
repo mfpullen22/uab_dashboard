@@ -5,6 +5,7 @@ import "package:uab_dashboard/screens/completed_projects.dart";
 import "package:uab_dashboard/screens/documents.dart";
 import "package:uab_dashboard/screens/home.dart";
 import "package:uab_dashboard/screens/profile.dart";
+import "package:uab_dashboard/screens/projects_summary.dart";
 import "package:uab_dashboard/screens/user_projects.dart";
 
 class HubScreen extends StatefulWidget {
@@ -71,6 +72,27 @@ class _HubScreenState extends State<HubScreen> {
                             ? FontWeight.bold
                             : FontWeight.normal,
                         decoration: _activePageTitle == "Home"
+                            ? TextDecoration.underline
+                            : null,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    onPressed: () {
+                      _selectPage(
+                          const ProjectsSummaryScreen(), "Projects Summary");
+                    },
+                    child: Text(
+                      "Projects Summary",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: _activePageTitle == "Projects Summary"
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                        decoration: _activePageTitle == "Projects Summary"
                             ? TextDecoration.underline
                             : null,
                       ),
