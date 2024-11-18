@@ -3,6 +3,10 @@ class Project {
     required this.title,
     required this.shortName,
     required this.pi,
+    required this.status,
+    required this.type,
+    required this.subgroup,
+    required this.sites,
     required this.description,
     required this.presentedDate,
     required this.approvalSCDate,
@@ -24,6 +28,10 @@ class Project {
   final String shortName;
   final String pi;
   final String description;
+  final String status;
+  final String type;
+  final String subgroup;
+  final List<String> sites;
   final String presentedDate;
   final String approvalSCDate;
   final String approvalCDCDate;
