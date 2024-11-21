@@ -82,8 +82,7 @@ class _HubScreenState extends State<HubScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextButton(
                     onPressed: () {
-                      _selectPage(
-                          const ProjectsSummaryScreen(), "Projects Summary");
+                      _selectPage(ProjectsSummaryScreen(), "Projects Summary");
                     },
                     child: Text(
                       "Projects Summary",

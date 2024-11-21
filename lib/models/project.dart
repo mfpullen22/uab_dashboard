@@ -3,6 +3,7 @@ class Project {
     required this.title,
     required this.shortName,
     required this.pi,
+    required this.copis,
     required this.status,
     required this.type,
     required this.subgroup,
@@ -27,6 +28,7 @@ class Project {
   final String title;
   final String shortName;
   final String pi;
+  final List<String> copis;
   final String description;
   final String status;
   final String type;
@@ -43,7 +45,7 @@ class Project {
   final String dataCollection;
   final String closeOut;
   final Map<String, dynamic> comments;
-  final DateTime startDate;
-  final DateTime endDate;
-  final List<Map<String, dynamic>> funding;
+  final String startDate;
+  final String endDate;
+  final Map<String, dynamic> funding;
 }
