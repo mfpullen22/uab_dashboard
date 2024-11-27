@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:uab_dashboard/models/project.dart";
 import "package:uab_dashboard/services/firestore_service.dart";
 import "package:uab_dashboard/widgets/projects_table.dart";
+import "package:uab_dashboard/widgets/export_csv_button.dart";
 
 class ProjectsSummaryScreen extends StatelessWidget {
   ProjectsSummaryScreen({super.key});
@@ -11,9 +12,6 @@ class ProjectsSummaryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Projects'),
-      ),
       body: FutureBuilder<List<Project>>(
         future: _firebaseService.fetchProjects(),
         builder: (context, snapshot) {
@@ -25,7 +23,27 @@ class ProjectsSummaryScreen extends StatelessWidget {
             return const Center(child: Text('No projects found'));
           }
 
-          return ProjectsTable(projects: snapshot.data!);
+          final projects = snapshot.data!;
+          return Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Approved Projects",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ExportCsvButton(projects: projects),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: ProjectsTable(projects: projects),
+              ),
+            ],
+          );
         },
       ),
     );

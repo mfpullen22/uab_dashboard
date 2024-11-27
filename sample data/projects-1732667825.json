@@ -1,0 +1,128 @@
+{
+    "meta": {
+        "format": "JSON",
+        "version": "1.1.0",
+        "projectId": "uab-dashboard",
+        "resourcePath": [
+            "projects"
+        ],
+        "recursive": false,
+        "creationTime": 1732667849,
+        "app": "firefoo"
+    },
+    "data": {
+        "avNrDPsJQvrAXqwdSZbI": {
+            "activatedDate": "3/20/2024",
+            "approvalCDCDate": "3/19/2024",
+            "approvalContractDate": "",
+            "approvalIRBDate": "12/20/2023",
+            "approvalSCDate": "11/7/2023",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Test Comment",
+                "11/9/2024": "Another Test Comment"
+            },
+            "copis": [
+                "David Boulware"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "7",
+                "screened": "40"
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "STUDY001234567",
+            "pi": "Matthew Pullen",
+            "presentedDate": "10/31/2023",
+            "shortName": "",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Active",
+            "subgroup": "Endemic Mycoses",
+            "title": "Prospective Nationwide Registry of Endemic Mycoses",
+            "type": "Surveillance",
+            "user_owner": "hNcESwDFDeOpBIBBb3Wj",
+            "__collections__": {}
+        },
+        "sd98asdklm234": {
+            "activatedDate": "",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "12/4/2023",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Protocol in development, refinement by Drashti"
+            },
+            "copis": [],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Jose Vasquez",
+            "presentedDate": "11/28/2023",
+            "shortName": "SCAT",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Approved by SC, Protocol in Development",
+            "subgroup": "Candida",
+            "title": "Short-Course Antifungal Therapy for Uncomplicated Candidemia",
+            "type": "Clinical Trial",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "asd98fds87kjh": {
+            "activatedDate": "",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "3/29/2024",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Submitted to UAB IRB (08/08/2024), and Hopkins IRB"
+            },
+            "copis": [
+                "Nitipong Permpalung"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "IRB-300013340 (UAB)",
+            "pi": "Mohanad Al-Obaidi",
+            "presentedDate": "2/21/2024",
+            "shortName": "Candida Survey",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Submitted to UAB IRB (08/08/2024), still backlogged. Submitted to Hopkins IRB",
+            "subgroup": "Candida",
+            "title": "Candida infrastructure and practice pattern survey work group",
+            "type": "Retrospective",
+            "user_owner": "",
+            "__collections__": {}
+        }
+    }
+}
