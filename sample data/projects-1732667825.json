@@ -11,8 +11,9 @@
         "app": "firefoo"
     },
     "data": {
-        "avNrDPsJQvrAXqwdSZbI": {
+        "avNrDPsJQvr": {
             "activatedDate": "3/20/2024",
+            "activeFilter": "active",
             "approvalCDCDate": "3/19/2024",
             "approvalContractDate": "",
             "approvalIRBDate": "12/20/2023",
@@ -50,8 +51,9 @@
             "user_owner": "hNcESwDFDeOpBIBBb3Wj",
             "__collections__": {}
         },
-        "sd98asdklm234": {
+        "sd98asdklm2": {
             "activatedDate": "",
+            "activeFilter": "active",
             "approvalCDCDate": "",
             "approvalContractDate": "",
             "approvalIRBDate": "",
@@ -86,8 +88,9 @@
             "user_owner": "",
             "__collections__": {}
         },
-        "asd98fds87kjh": {
+        "asd98fds87k": {
             "activatedDate": "",
+            "activeFilter": "active",
             "approvalCDCDate": "",
             "approvalContractDate": "",
             "approvalIRBDate": "",
@@ -121,6 +124,315 @@
             "subgroup": "Candida",
             "title": "Candida infrastructure and practice pattern survey work group",
             "type": "Retrospective",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "td95ashkpm3": {
+            "activatedDate": "",
+            "activeFilter": "active",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "8/20/2024",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Budget negotiation"
+            },
+            "copis": [
+                "John Baddley",
+                "Marisa Miceli"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Emily Eichenberger",
+            "presentedDate": "8/13/2024",
+            "shortName": "MISS",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Approved by SC, waiting on final budget",
+            "subgroup": "Molds",
+            "title": "Mold Infection Salvage Study",
+            "type": "",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "a98sdljkh57": {
+            "activatedDate": "",
+            "activeFilter": "active",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "8/20/2024",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Budget and Contract in progress"
+            },
+            "copis": [],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Jonathan Huggins",
+            "presentedDate": "8/13/24",
+            "shortName": "IFD in BTKi",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Approved by SC, waiting on final budget",
+            "subgroup": "Special Hosts",
+            "title": "Exploring the Epidemiology of Invasive Fungal Disease Among Recipients of Bruton Tyrosine Kinase Inhibitors (BTKi) Using National Claims Data",
+            "type": "Retrospective",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "g943sdlpj44": {
+            "activatedDate": "",
+            "activeFilter": "active",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "8/20/2024",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Waiting on CDC Approval (submitted 09/18/2024), Through 1st round at IRB"
+            },
+            "copis": [],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "IRB00458575",
+            "pi": "Sean Zhang",
+            "presentedDate": "8/13/2024",
+            "shortName": "C. auris Surveillance",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Approved by SC, waiting on final budget",
+            "subgroup": "Candida",
+            "title": "Multicenter Candida auris Laboratory Surveillance Study",
+            "type": "Surveillance",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "k743frtlpj2": {
+            "activatedDate": "",
+            "activeFilter": "active",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": "Long refining protocol, submit to WIRB next"
+            },
+            "copis": [
+                "Gerald McGwin",
+                "Barbara Alexander",
+                "Todd McCarty",
+                "Kenneth Long"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Peter Pappas",
+            "presentedDate": "10/10/2024",
+            "shortName": "MSG CDM",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "",
+            "subgroup": "",
+            "title": "Developing a Common Data Model for Invasive Fungal Infections: A Phased Approach Toward a Unified MSGERC database",
+            "type": "",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "j711fztxpk9": {
+            "activatedDate": "",
+            "activeFilter": "pending",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": ""
+            },
+            "copis": [],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Julio Zuniga",
+            "presentedDate": "",
+            "shortName": "Crypto Epi Study",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Not reviewed/approved by Endemic Mycoses and Crypto Subgroup",
+            "subgroup": "",
+            "title": "Epidemiology and Geographic Distribution of Cryptococcal Disease among Medicare Insured Individuals in the United States (2007-2023): Retrospective Cohort Study",
+            "type": "",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "k342fjtlpo7": {
+            "activatedDate": "",
+            "activeFilter": "pending",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": ""
+            },
+            "copis": [
+                "Hong Nguyen"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Neil Clancy",
+            "presentedDate": "",
+            "shortName": "Airborne Fungi",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Presented 10/10, Voting in progress",
+            "subgroup": "",
+            "title": "Correlations between airborne fungi in indoor and outdoor environments and invasive fungal infections at tertiary care hospitals",
+            "type": "",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "l920fiyxp9o": {
+            "activatedDate": "",
+            "activeFilter": "pending",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": ""
+            },
+            "copis": [
+                "Fernanda Silveira",
+                "Brendan Smith"
+            ],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Hong Nguyen",
+            "presentedDate": "",
+            "shortName": "Rezafungin in LiverTx",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "To present at November meeting",
+            "subgroup": "",
+            "title": "Rezafungin prophylaxis in liver transplant at high risk for invasive fungal infection",
+            "type": "",
+            "user_owner": "",
+            "__collections__": {}
+        },
+        "p290heyxki4": {
+            "activatedDate": "",
+            "activeFilter": "pending",
+            "approvalCDCDate": "",
+            "approvalContractDate": "",
+            "approvalIRBDate": "",
+            "approvalSCDate": "",
+            "closeOut": "",
+            "comments": {
+                "11/20/2024": ""
+            },
+            "copis": [],
+            "dataCollection": "",
+            "description": "",
+            "endDate": "",
+            "enrollment": {
+                "enrolled": "",
+                "screened": ""
+            },
+            "funding": {
+                "NIH": ""
+            },
+            "irbNumber": "",
+            "pi": "Mohanid Al-Obaidi",
+            "presentedDate": "",
+            "shortName": "C. auris non-BSI",
+            "sites": [
+                ""
+            ],
+            "startDate": "",
+            "status": "Not yet reviewed/approved by Candida Subgroup",
+            "subgroup": "",
+            "title": "Defining the Scope of Invasive Candidiasis Caused by Candida auris Beyond Bloodstream Infections",
+            "type": "",
             "user_owner": "",
             "__collections__": {}
         }

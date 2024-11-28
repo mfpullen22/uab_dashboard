@@ -36,6 +36,7 @@ class ExportCsvButton extends StatelessWidget {
       "Close Out",
       "Start Date",
       "End Date",
+      "Active/Pending",
       "Funding",
       "Comments",
     ];
@@ -68,6 +69,7 @@ class ExportCsvButton extends StatelessWidget {
         project.closeOut,
         project.startDate,
         project.endDate,
+        project.activeFilter,
         jsonEncode(project.funding), // Encode funding map as JSON
         jsonEncode(project.comments), // Encode comments map as JSON
       ]);

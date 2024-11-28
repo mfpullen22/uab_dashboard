@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:uab_dashboard/models/project.dart';
 
-class ProjectsTable extends StatelessWidget {
-  const ProjectsTable({super.key, required this.projects});
+class ActiveProjectsTable extends StatelessWidget {
+  const ActiveProjectsTable({super.key, required this.projects});
 
   final List<Project> projects;
 
   @override
   Widget build(BuildContext context) {
+    final activeProjects =
+        projects.where((project) => project.activeFilter == "active").toList();
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: DataTable(
-        headingRowColor: MaterialStateProperty.resolveWith<Color>(
+        headingRowColor: WidgetStateProperty.resolveWith<Color>(
           (states) => Colors.grey[200]!, // Light grey for the header row
         ),
         dataRowMinHeight: 50,
@@ -99,7 +102,7 @@ class ProjectsTable extends StatelessWidget {
             ),
           ),
         ],
-        rows: projects.asMap().entries.map(
+        rows: activeProjects.asMap().entries.map(
           (entry) {
             final index = entry.key; // Current index
             final project = entry.value; // Current project
@@ -125,7 +128,7 @@ class ProjectsTable extends StatelessWidget {
                 recentCommentEntry?.value ?? 'No Comments';
 
             // Determine row background color
-            final backgroundColor = MaterialStateProperty.resolveWith<Color>(
+            final backgroundColor = WidgetStateProperty.resolveWith<Color>(
               (states) =>
                   (index % 2 == 0) ? Colors.lightBlue[50]! : Colors.transparent,
             );
@@ -135,7 +138,7 @@ class ProjectsTable extends StatelessWidget {
               cells: [
                 DataCell(
                   SizedBox(
-                    width: 150,
+                    width: 250,
                     child: Wrap(
                       spacing: 0,
                       runSpacing: 4,
@@ -222,9 +225,17 @@ class ProjectsTable extends StatelessWidget {
                   ),
                 ),
                 DataCell(
-                  Text(project.irbNumber.isNotEmpty
-                      ? project.irbNumber
-                      : 'Pending'),
+                  Text(
+                    project.irbNumber.isNotEmpty
+                        ? project.irbNumber
+                        : 'Pending',
+                    style: TextStyle(
+                      color: project.irbNumber.isNotEmpty
+                          ? const Color.fromARGB(255, 6, 173, 12)
+                          : const Color.fromARGB(255, 200, 182, 24),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 DataCell(
                   Text(project.activatedDate.isNotEmpty

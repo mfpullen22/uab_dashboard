@@ -33,6 +33,7 @@ class FirebaseService {
           startDate: data['startDate'],
           endDate: data['endDate'],
           funding: Map<String, dynamic>.from(data['funding'] ?? {}),
+          activeFilter: data['activeFilter'],
         );
       }).toList();
     } catch (e) {

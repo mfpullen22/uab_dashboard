@@ -23,6 +23,7 @@ class Project {
     required this.startDate,
     required this.endDate,
     required this.funding,
+    required this.activeFilter,
   });
 
   final String title;
@@ -48,4 +49,5 @@ class Project {
   final String startDate;
   final String endDate;
   final Map<String, dynamic> funding;
+  final String activeFilter;
 }
