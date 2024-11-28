@@ -6,10 +6,31 @@ class ActiveProjectsTable extends StatelessWidget {
 
   final List<Project> projects;
 
+  DateTime parseDate(String dateString) {
+    try {
+      // Split the string into components (MM/DD/YYYY)
+      final parts = dateString.split('/');
+      if (parts.length == 3) {
+        final month = int.parse(parts[0]);
+        final day = int.parse(parts[1]);
+        final year = int.parse(parts[2]);
+        return DateTime(year, month, day);
+      }
+    } catch (e) {
+      debugPrint('Error parsing date: $dateString, error: $e');
+    }
+    return DateTime(0); // Fallback to epoch if parsing fails
+  }
+
   @override
   Widget build(BuildContext context) {
     final activeProjects =
-        projects.where((project) => project.activeFilter == "active").toList();
+        projects.where((project) => project.activeFilter == "active").toList()
+          ..sort((a, b) {
+            final dateA = parseDate(a.presentedDate);
+            final dateB = parseDate(b.presentedDate);
+            return dateA.compareTo(dateB);
+          });
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -180,7 +201,9 @@ class ActiveProjectsTable extends StatelessWidget {
                                   decoration: TextDecoration.underline,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Text(project.approvalSCDate),
+                            Text(project.approvalSCDate.isNotEmpty
+                                ? project.approvalSCDate
+                                : 'Pending'),
                           ],
                         ),
                         Row(
@@ -191,7 +214,9 @@ class ActiveProjectsTable extends StatelessWidget {
                                   decoration: TextDecoration.underline,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Text(project.approvalCDCDate),
+                            Text(project.approvalCDCDate.isNotEmpty
+                                ? project.approvalCDCDate
+                                : 'Pending'),
                           ],
                         ),
                         Row(
@@ -238,9 +263,17 @@ class ActiveProjectsTable extends StatelessWidget {
                   ),
                 ),
                 DataCell(
-                  Text(project.activatedDate.isNotEmpty
-                      ? project.activatedDate
-                      : 'Pending'),
+                  Text(
+                    project.activatedDate.isNotEmpty
+                        ? project.activatedDate
+                        : 'Pending',
+                    style: TextStyle(
+                      color: project.activatedDate.isNotEmpty
+                          ? const Color.fromARGB(255, 6, 173, 12)
+                          : const Color.fromARGB(255, 200, 182, 24),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 DataCell(
                   SizedBox(
@@ -272,17 +305,33 @@ class ActiveProjectsTable extends StatelessWidget {
                 DataCell(
                   SizedBox(
                     width: 100,
-                    child: Text(project.dataCollection.isNotEmpty
-                        ? project.dataCollection
-                        : 'Pending'),
+                    child: Text(
+                      project.dataCollection.isNotEmpty
+                          ? project.dataCollection
+                          : 'Pending',
+                      style: TextStyle(
+                        color: project.dataCollection.isNotEmpty
+                            ? const Color.fromARGB(255, 6, 173, 12)
+                            : const Color.fromARGB(255, 200, 182, 24),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
                 DataCell(
                   SizedBox(
                     width: 100,
-                    child: Text(project.closeOut.isNotEmpty
-                        ? project.closeOut
-                        : 'Pending'),
+                    child: Text(
+                      project.closeOut.isNotEmpty
+                          ? project.closeOut
+                          : 'Pending',
+                      style: TextStyle(
+                        color: project.closeOut.isNotEmpty
+                            ? const Color.fromARGB(255, 6, 173, 12)
+                            : const Color.fromARGB(255, 200, 182, 24),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
                 DataCell(

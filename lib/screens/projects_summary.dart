@@ -49,7 +49,7 @@ class ProjectsSummaryScreen extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: ActiveProjectsTable(projects: projects),
                   ),
                 ),
