@@ -1,7 +1,124 @@
-import "package:firebase_auth/firebase_auth.dart";
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:uab_dashboard/screens/home.dart';
+import 'package:uab_dashboard/screens/projects_summary.dart';
+import 'package:uab_dashboard/screens/submitted_projects.dart';
+import 'package:uab_dashboard/screens/user_projects.dart';
+
+class HubScreen extends StatefulWidget {
+  const HubScreen({super.key});
+
+  @override
+  State<HubScreen> createState() => _HubScreenState();
+}
+
+class _HubScreenState extends State<HubScreen> {
+  Widget _activePage = const HomeScreen();
+  String _activePageTitle = "Home";
+
+  void _selectPage(Widget page, String title) {
+    setState(() {
+      _activePage = page;
+      _activePageTitle = title;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isDesktop = screenWidth > 800;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_activePageTitle),
+        actions: [
+          IconButton(
+            onPressed: () => _selectPage(const HomeScreen(), "Home"),
+            icon: const Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+            },
+            icon: const Icon(Icons.logout),
+          ),
+        ],
+      ),
+      drawer: isDesktop
+          ? null
+          : Drawer(
+              child: _buildSidebar(),
+            ),
+      body: Row(
+        children: [
+          if (isDesktop)
+            SizedBox(
+              width: screenWidth * 0.2,
+              child: _buildSidebar(),
+            ),
+          if (isDesktop) const VerticalDivider(width: 1, color: Colors.grey),
+          Expanded(
+            child: _activePage,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSidebar() {
+    return ListView(
+      padding: const EdgeInsets.all(8.0),
+      children: [
+        ListTile(
+          title: const Text("Home"),
+          selected: _activePageTitle == "Home",
+          onTap: () {
+            _selectPage(const HomeScreen(), "Home");
+            if (MediaQuery.of(context).size.width <= 800) {
+              Navigator.of(context).pop(); // Close drawer if on mobile
+            }
+          },
+        ),
+        ListTile(
+          title: const Text("Projects Summary"),
+          selected: _activePageTitle == "Projects Summary",
+          onTap: () {
+            _selectPage(ProjectsSummaryScreen(), "Projects Summary");
+            if (MediaQuery.of(context).size.width <= 800) {
+              Navigator.of(context).pop(); // Close drawer if on mobile
+            }
+          },
+        ),
+        ListTile(
+          title: const Text("Submitted Projects"),
+          selected: _activePageTitle == "Submitted Projects",
+          onTap: () {
+            _selectPage(const SubmittedProjectsScreen(), "Submitted Projects");
+            if (MediaQuery.of(context).size.width <= 800) {
+              Navigator.of(context).pop(); // Close drawer if on mobile
+            }
+          },
+        ),
+        ListTile(
+          title: const Text("Add/Edit a Project"),
+          selected: _activePageTitle == "Add/Edit a Project",
+          onTap: () {
+            _selectPage(const UserProjectsScreen(), "Add/Edit a Project");
+            if (MediaQuery.of(context).size.width <= 800) {
+              Navigator.of(context).pop(); // Close drawer if on mobile
+            }
+          },
+        ),
+      ],
+    );
+  }
+}
+
+
+/* import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:uab_dashboard/screens/active_projects.dart";
-import "package:uab_dashboard/screens/completed_projects.dart";
+import "package:uab_dashboard/screens/submitted_projects.dart";
 import "package:uab_dashboard/screens/documents.dart";
 import "package:uab_dashboard/screens/home.dart";
 import "package:uab_dashboard/screens/profile.dart";
@@ -197,4 +314,4 @@ class _HubScreenState extends State<HubScreen> {
       ),
     );
   }
-}
+} */

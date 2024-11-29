@@ -1,13 +1,13 @@
 import "package:flutter/material.dart";
 
-class CompletedProjectsScreen extends StatelessWidget {
-  const CompletedProjectsScreen({super.key});
+class SubmittedProjectsScreen extends StatelessWidget {
+  const SubmittedProjectsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        "This is the Completed Projects screen",
+        "This is the Submitted Projects screen",
         style: Theme.of(context)
             .textTheme
             .titleMedium!
