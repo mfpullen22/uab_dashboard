@@ -30,9 +30,12 @@ class ProjectsSummaryScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
+                    spacing: 16,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      const SizedBox(height: 16),
                       Row(
+                        spacing: 16,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
@@ -42,7 +45,6 @@ class ProjectsSummaryScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 16),
                           ExportCsvButton(projects: projects),
                         ],
                       ),

@@ -9,18 +9,18 @@ class HomeScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 16,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Text(
-              "Welcome to the Dashboard",
+              "Welcome to the UAB-CDC U01 Dashboard",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 16),
             Text(
               "This dashboard serves as a hub for all projects funded through the UAB CDC U01 grant.",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            const SizedBox(height: 16),
             Container(
               height: 200,
               color: Colors.blue[50], // Placeholder for additional content

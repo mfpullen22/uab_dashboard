@@ -29,8 +29,8 @@ class _HubScreenState extends State<HubScreen> {
     final isDesktop = screenWidth > 800;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_activePageTitle),
+/*       appBar: AppBar(
+        title: Center(child: Text(_activePageTitle)),
         actions: [
           IconButton(
             onPressed: () => _selectPage(const HomeScreen(), "Home"),
@@ -43,7 +43,7 @@ class _HubScreenState extends State<HubScreen> {
             icon: const Icon(Icons.logout),
           ),
         ],
-      ),
+      ), */
       drawer: isDesktop
           ? null
           : Drawer(
@@ -72,6 +72,7 @@ class _HubScreenState extends State<HubScreen> {
         ListTile(
           title: const Text("Home"),
           selected: _activePageTitle == "Home",
+          selectedTileColor: Colors.lightBlueAccent.withAlpha(51),
           onTap: () {
             _selectPage(const HomeScreen(), "Home");
             if (MediaQuery.of(context).size.width <= 800) {
@@ -82,6 +83,7 @@ class _HubScreenState extends State<HubScreen> {
         ListTile(
           title: const Text("Projects Summary"),
           selected: _activePageTitle == "Projects Summary",
+          selectedTileColor: Colors.lightBlueAccent.withAlpha(51),
           onTap: () {
             _selectPage(ProjectsSummaryScreen(), "Projects Summary");
             if (MediaQuery.of(context).size.width <= 800) {
@@ -92,6 +94,7 @@ class _HubScreenState extends State<HubScreen> {
         ListTile(
           title: const Text("Submitted Projects"),
           selected: _activePageTitle == "Submitted Projects",
+          selectedTileColor: Colors.lightBlueAccent.withAlpha(51),
           onTap: () {
             _selectPage(const SubmittedProjectsScreen(), "Submitted Projects");
             if (MediaQuery.of(context).size.width <= 800) {
@@ -102,6 +105,7 @@ class _HubScreenState extends State<HubScreen> {
         ListTile(
           title: const Text("Add/Edit a Project"),
           selected: _activePageTitle == "Add/Edit a Project",
+          selectedTileColor: Colors.lightBlueAccent.withAlpha(51),
           onTap: () {
             _selectPage(const UserProjectsScreen(), "Add/Edit a Project");
             if (MediaQuery.of(context).size.width <= 800) {
