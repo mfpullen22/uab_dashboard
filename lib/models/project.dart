@@ -1,5 +1,6 @@
 class Project {
   const Project({
+    required this.docId,
     required this.title,
     required this.shortName,
     required this.pi,
@@ -26,6 +27,7 @@ class Project {
     required this.activeFilter,
   });
 
+  final String docId;
   final String title;
   final String shortName;
   final String pi;
@@ -50,4 +52,33 @@ class Project {
   final String endDate;
   final Map<String, dynamic> funding;
   final String activeFilter;
+
+  Map<String, dynamic> toMap() {
+    return {
+      'title': title,
+      'shortName': shortName,
+      'pi': pi,
+      'copis': copis,
+      'description': description,
+      'status': status,
+      'type': type,
+      'subgroup': subgroup,
+      'sites': sites,
+      'presentedDate': presentedDate,
+      'approvalSCDate': approvalSCDate,
+      'approvalCDCDate': approvalCDCDate,
+      'approvalIRBDate': approvalIRBDate,
+      'irbNumber': irbNumber,
+      'approvalContractDate': approvalContractDate,
+      'activatedDate': activatedDate,
+      'enrollment': enrollment,
+      'dataCollection': dataCollection,
+      'closeOut': closeOut,
+      'comments': comments,
+      'startDate': startDate,
+      'endDate': endDate,
+      'funding': funding,
+      'activeFilter': activeFilter,
+    };
+  }
 }

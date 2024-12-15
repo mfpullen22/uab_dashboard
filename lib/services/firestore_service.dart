@@ -10,6 +10,7 @@ class FirebaseService {
       return snapshot.docs.map((doc) {
         final data = doc.data() as Map<String, dynamic>;
         return Project(
+          docId: doc.id,
           title: data['title'],
           shortName: data['shortName'],
           pi: data['pi'],
