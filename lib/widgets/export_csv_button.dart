@@ -1,4 +1,115 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
+import 'dart:html';
+import 'package:excel/excel.dart';
+import 'package:flutter/material.dart';
+import 'package:uab_dashboard/models/project.dart';
+
+class ExportExcelButton extends StatelessWidget {
+  const ExportExcelButton({super.key, required this.projects});
+
+  final List<Project> projects;
+
+  void exportToExcel() {
+    // Create a new Excel document
+    final excel = Excel.createExcel();
+
+    // Define headers as a list of `CellValue`
+    final headers = [
+      TextCellValue("Title"),
+      TextCellValue("Short Name"),
+      TextCellValue("PI"),
+      TextCellValue("Co-PIs"),
+      TextCellValue("Status"),
+      TextCellValue("Type"),
+      TextCellValue("Subgroup"),
+      TextCellValue("Sites"),
+      TextCellValue("Description"),
+      TextCellValue("Presented Date"),
+      TextCellValue("Approval SC Date"),
+      TextCellValue("Approval CDC Date"),
+      TextCellValue("Approval IRB Date"),
+      TextCellValue("IRB Number"),
+      TextCellValue("Approval Contract Date"),
+      TextCellValue("Activated Date"),
+      TextCellValue("Enrollment Screened"),
+      TextCellValue("Enrollment Enrolled"),
+      TextCellValue("Data Collection"),
+      TextCellValue("Close Out"),
+      TextCellValue("Start Date"),
+      TextCellValue("End Date"),
+      TextCellValue("Active/Pending"),
+      TextCellValue("Funding"),
+      TextCellValue("Comments"),
+    ];
+
+    // Function to add projects to a specific sheet
+    void addProjectsToSheet(String sheetName, List<Project> projectList) {
+      final sheet = excel[sheetName]; // Create or get the sheet
+
+      // Add headers to the sheet
+      sheet.appendRow(headers);
+
+      // Add rows of project data
+      for (var project in projectList) {
+        sheet.appendRow([
+          TextCellValue(project.title),
+          TextCellValue(project.shortName),
+          TextCellValue(project.pi),
+          TextCellValue(project.copis.join(", ")), // Convert list to a string
+          TextCellValue(project.status),
+          TextCellValue(project.type),
+          TextCellValue(project.subgroup),
+          TextCellValue(project.sites.join(", ")), // Convert list to a string
+          TextCellValue(project.description),
+          TextCellValue(project.presentedDate),
+          TextCellValue(project.approvalSCDate),
+          TextCellValue(project.approvalCDCDate),
+          TextCellValue(project.approvalIRBDate),
+          TextCellValue(project.irbNumber),
+          TextCellValue(project.approvalContractDate),
+          TextCellValue(project.activatedDate),
+          TextCellValue(project.enrollment["screened"]?.toString() ?? "0"),
+          TextCellValue(project.enrollment["enrolled"]?.toString() ?? "0"),
+          TextCellValue(project.dataCollection),
+          TextCellValue(project.closeOut),
+          TextCellValue(project.startDate),
+          TextCellValue(project.endDate),
+          TextCellValue(project.activeFilter),
+          TextCellValue(
+              project.funding.isNotEmpty ? project.funding.toString() : ""),
+          TextCellValue(
+              project.comments.isNotEmpty ? project.comments.toString() : ""),
+        ]);
+      }
+    }
+
+    // Split projects into active and pending
+    final activeProjects = projects.where((p) => p.status == "active").toList();
+    final pendingProjects =
+        projects.where((p) => p.status == "pending").toList();
+
+    // Add data to respective sheets
+    addProjectsToSheet("Active Projects", activeProjects);
+    addProjectsToSheet("Pending Projects", pendingProjects);
+
+    // Delete the default "Sheet1"
+    excel.delete('Sheet1');
+
+    // Save the file and trigger download
+    final fileBytes = excel.save(fileName: "projects_test.xlsx");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: exportToExcel,
+      child: const Text('Export to Excel'),
+    );
+  }
+}
+
+
+
+/* // ignore_for_file: avoid_web_libraries_in_flutter
 
 import 'dart:convert';
 import 'dart:html';
@@ -96,3 +207,4 @@ class ExportCsvButton extends StatelessWidget {
     );
   }
 }
+ */

@@ -43,7 +43,7 @@ class ProjectsSummaryScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 16),
-                      ExportCsvButton(projects: projects),
+                      ExportExcelButton(projects: projects),
                     ],
                   ),
                   const SizedBox(height: 16),
