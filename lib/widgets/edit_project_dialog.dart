@@ -84,7 +84,9 @@ class _EditProjectDialogState extends State<EditProjectDialog> {
         .doc(widget.project.title) // Assuming the project title is unique
         .update(updatedData);
 
-    Navigator.of(context).pop();
+    if (mounted) {
+      Navigator.of(context).pop();
+    }
   }
 
   @override

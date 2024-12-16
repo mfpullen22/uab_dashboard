@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:uab_dashboard/screens/home.dart';
 import 'package:uab_dashboard/screens/projects_summary.dart';
 import 'package:uab_dashboard/screens/my_projects.dart';
-import 'package:uab_dashboard/screens/user_projects.dart';
+import 'package:uab_dashboard/screens/submit_project.dart';
 
 class HubScreen extends StatefulWidget {
   const HubScreen({super.key});
@@ -102,17 +101,18 @@ class _HubScreenState extends State<HubScreen> {
             }
           },
         ),
-/*         ListTile(
-          title: const Text("Add/Edit a Project"),
-          selected: _activePageTitle == "Add/Edit a Project",
+        ListTile(
+          title: const Text("Submit a Project"),
+          selected: _activePageTitle == "Submit a Project",
           selectedTileColor: Colors.lightBlueAccent.withAlpha(51),
           onTap: () {
-            _selectPage(const UserProjectsScreen(), "Add/Edit a Project");
+            _selectPage(SubmitProjectScreen(selectPage: _selectPage),
+                "Submit a Project");
             if (MediaQuery.of(context).size.width <= 800) {
               Navigator.of(context).pop(); // Close drawer if on mobile
             }
           },
-        ), */
+        ),
       ],
     );
   }

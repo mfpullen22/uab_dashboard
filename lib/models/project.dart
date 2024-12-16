@@ -25,6 +25,7 @@ class Project {
     required this.endDate,
     required this.funding,
     required this.activeFilter,
+    this.attachedFiles = const [],
   });
 
   final String docId;
@@ -52,6 +53,7 @@ class Project {
   final String endDate;
   final Map<String, dynamic> funding;
   final String activeFilter;
+  final List<Map<String, String>> attachedFiles;
 
   Map<String, dynamic> toMap() {
     return {
