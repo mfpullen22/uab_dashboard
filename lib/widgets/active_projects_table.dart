@@ -71,7 +71,7 @@ class ActiveProjectsTable extends StatelessWidget {
               ),
             ),
           ),
-          DataColumn(
+/*           DataColumn(
             label: Text(
               'IRB Number',
               style: TextStyle(
@@ -80,7 +80,7 @@ class ActiveProjectsTable extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-          ),
+          ), */
           DataColumn(
             label: Text(
               'Activated',
@@ -101,7 +101,7 @@ class ActiveProjectsTable extends StatelessWidget {
               ),
             ),
           ),
-          DataColumn(
+/*           DataColumn(
             label: Text(
               'Data Collection',
               style: TextStyle(
@@ -120,7 +120,7 @@ class ActiveProjectsTable extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-          ),
+          ), */
           DataColumn(
             label: Text(
               'Latest Comment',
@@ -203,9 +203,9 @@ class ActiveProjectsTable extends StatelessWidget {
                       ? project.approvalSCDate
                       : 'Pending',
                 )),
-                DataCell(Text(project.irbNumber.isNotEmpty
+                /* DataCell(Text(project.irbNumber.isNotEmpty
                     ? project.irbNumber
-                    : 'Pending')),
+                    : 'Pending')), */
                 DataCell(Text(project.activatedDate.isNotEmpty
                     ? project.activatedDate
                     : 'Pending')),
@@ -213,22 +213,27 @@ class ActiveProjectsTable extends StatelessWidget {
                   "Screened: ${project.enrollment['screened'] ?? '0'}\n"
                   "Enrolled: ${project.enrollment['enrolled'] ?? '0'}",
                 )),
-                DataCell(Text(project.dataCollection.isNotEmpty
+/*                 DataCell(Text(project.dataCollection.isNotEmpty
                     ? project.dataCollection
                     : 'Pending')),
                 DataCell(Text(project.closeOut.isNotEmpty
                     ? project.closeOut
-                    : 'Pending')),
+                    : 'Pending')), */
                 DataCell(
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        recentCommentDate,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(recentCommentText),
-                    ],
+                  SizedBox(
+                    width: 250,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          recentCommentDate,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          softWrap: true, // Allow text to wrap
+                          overflow: TextOverflow.visible,
+                        ),
+                        Text(recentCommentText),
+                      ],
+                    ),
                   ),
                 ),
               ],

@@ -123,7 +123,7 @@ class PendingProjectsTable extends StatelessWidget {
                 ),
                 DataCell(
                   SizedBox(
-                    width: 400,
+                    width: 370,
                     child: Wrap(
                       spacing: 0,
                       runSpacing: 4,
